@@ -45,7 +45,7 @@ export default function Education() {
                     B.Tech – AI & Data Science
                   </h3>
                   <p className="text-[#00F5FF] font-mono text-sm">
-                    M. Kumarasamy College of Engineering
+                    J.J. College Of Engineering And Technology
                   </p>
                 </div>
               </div>
