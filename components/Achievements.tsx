@@ -6,16 +6,16 @@ import { Award, Trophy, Medal, Code2, Zap, Users } from "lucide-react";
 const achievements = [
   {
     icon: Trophy,
-    title: "Best Project Award",
+    title: "Paper Presentation 1st Prize",
     description: "Recognized for outstanding project: Engineergram – a full-stack ed-tech platform.",
-    org: "Academic",
+    org: "Inter-College",
     date: "2024",
     color: "#FFD700",
   },
   {
     icon: Award,
-    title: "Runner-Up – Web Dev Competition",
-    description: "Secured 2nd place in a web development challenge judged by industry professionals.",
+    title: "Runner-Up – Project Presentation",
+    description: "Secured 2nd place in a project presentation with web application prototype.",
     org: "Inter-College",
     date: "2024",
     color: "#C0C0C0",
@@ -24,9 +24,7 @@ const achievements = [
 
 const hackathons = [
   { icon: Code2, name: "Smart India Hackathon", desc: "National level - Hardware Edition", color: "#00F5FF" },
-  { icon: Zap, name: "Hack4Change", desc: "Social Impact Hackathon", color: "#7A5FFF" },
-  { icon: Medal, name: "CodeFest 2024", desc: "University Coding Competition", color: "#00F5FF" },
-  { icon: Users, name: "Tech Summit", desc: "AI/ML Project Showcase", color: "#7A5FFF" },
+  { icon: Zap, name: "Hack-O-Hertz-Hackathon", desc: "Hack-O-Hertz-Hackathon 36 National level Hackathon", color: "#7A5FFF" },
 ];
 
 export default function Achievements() {
