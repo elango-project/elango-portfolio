@@ -13,9 +13,6 @@ pnpm dev
 # or
 bun dev
 ```
-cd C:\Users\ELANGO\.gemini\antigravity\scratch\elango-portfolio
-npm run devcd C:\Users\ELANGO\.gemini\antigravity\scratch\elango-portfolio
-npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
