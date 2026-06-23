@@ -2,15 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "next-themes";
-import { Download, Menu, X, Zap, Sun, Moon } from "lucide-react";
+import { Download, Menu, X, Zap } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "Resume", href: "#resume" },
   { label: "Experience", href: "#experience" },
   { label: "Achievements", href: "#achievements" },
   { label: "Contact", href: "#contact" },
@@ -20,12 +18,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,10 +64,10 @@ export default function Navbar() {
             className="flex items-center gap-2 group"
             whileHover={{ scale: 1.03 }}
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00F5FF] to-[#7A5FFF] flex items-center justify-center shadow-[0_0_15px_rgba(0,245,255,0.4)]">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00F5FF] to-[#7A5FFF] flex items-center justify-center shadow-[0_0_15px_rgba(0,245,255,0.4)] transition-colors">
               <Zap size={16} className="text-black" fill="currentColor" />
             </div>
-            <span className="font-heading font-bold text-lg">
+            <span className="font-heading font-bold text-lg ml-2">
               <span className="text-[#00F5FF]">E</span>
               <span className="text-white">lango</span>
               <span className="text-[#7A5FFF]">.</span>
@@ -83,7 +75,7 @@ export default function Navbar() {
           </motion.a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8 xl:gap-10">
             {navLinks.map((link) => {
               const id = link.href.replace("#", "");
               const isActive = active === id;
@@ -92,10 +84,9 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-                  className={`nav-link relative px-2 py-2 text-sm font-medium font-heading transition-colors duration-200 ${
-                    isActive ? "text-[#00F5FF]" : "text-gray-400 hover:text-white"
+                  className={`nav-link relative px-1 py-2 text-sm font-heading transition-colors duration-200 ${
+                    isActive ? "text-[#00F5FF] font-medium" : "text-gray-400 hover:text-white"
                   }`}
-                  style={isActive ? { textShadow: '0 0 8px rgba(0,245,255,0.4)' } : undefined}
                   whileHover={{ scale: 1.05 }}
                 >
                   <span className="relative z-10">{link.label}</span>
@@ -112,28 +103,15 @@ export default function Navbar() {
           </div>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <motion.a
+          <div className="hidden md:flex items-center gap-4">
+            <a
               href="/resume.pdf"
               download
-              className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[rgba(0,245,255,0.4)] text-[#00F5FF] text-sm font-heading font-medium hover:bg-[rgba(0,245,255,0.08)] hover:shadow-[0_0_20px_rgba(0,245,255,0.2)] transition-all duration-200"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
+              className="flex items-center gap-2 px-5 py-2.5 bg-white text-black font-semibold rounded-xl shadow-sm hover:scale-[1.03] transition-all duration-200 text-sm font-heading"
             >
-              <Download size={15} />
+              <Download size={16} />
               Resume
-            </motion.a>
-
-            {/* Theme Toggle */}
-            {mounted && (
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="p-2 ml-2 rounded-lg border border-gray-800 text-gray-400 hover:text-white hover:border-gray-600 transition-colors"
-                aria-label="Toggle Theme"
-              >
-                {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-              </button>
-            )}
+            </a>
           </div>
 
           {/* Mobile menu toggle */}
@@ -154,9 +132,9 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed top-[65px] left-0 right-0 z-40 bg-[rgba(5,5,5,0.97)] backdrop-blur-xl border-b border-[rgba(0,245,255,0.1)] px-6 py-4 md:hidden"
+            className="fixed top-[72px] left-0 right-0 z-40 bg-white/95 dark:bg-[rgba(5,5,5,0.97)] backdrop-blur-xl border-b border-slate-200 dark:border-[rgba(0,245,255,0.1)] px-6 py-4 md:hidden shadow-lg"
           >
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2">
               {navLinks.map((link) => {
                 const id = link.href.replace("#", "");
                 const isActive = active === id;
@@ -165,10 +143,10 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-                    className={`px-4 py-3 text-sm font-heading rounded-lg transition-all ${
+                    className={`px-4 py-3 text-sm font-heading rounded-xl transition-all ${
                       isActive
-                        ? "text-[#00F5FF] bg-[rgba(0,245,255,0.08)] border-l-2 border-[#00F5FF]"
-                        : "text-gray-300 hover:text-[#00F5FF] hover:bg-[rgba(0,245,255,0.05)]"
+                        ? "text-[#00F5FF] bg-[rgba(0,245,255,0.08)] border-l-4 border-[#00F5FF] font-medium"
+                        : "text-gray-300 hover:text-[#00F5FF] hover:bg-[rgba(0,245,255,0.05)] border-l-4 border-transparent"
                     }`}
                   >
                     {link.label}
@@ -178,9 +156,9 @@ export default function Navbar() {
               <a
                 href="/resume.pdf"
                 download
-                className="mt-2 flex items-center gap-2 px-4 py-3 rounded-lg border border-[rgba(0,245,255,0.3)] text-[#00F5FF] text-sm font-heading font-medium"
+                className="mt-4 flex items-center justify-center gap-2 px-4 py-3.5 bg-white text-black font-semibold rounded-xl shadow-sm hover:scale-[1.03] transition-all duration-200 text-sm font-heading"
               >
-                <Download size={15} />
+                <Download size={18} />
                 Download Resume
               </a>
             </div>

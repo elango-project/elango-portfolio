@@ -5,7 +5,7 @@ import { GraduationCap, Calendar, MapPin, BookOpen } from "lucide-react";
 
 export default function Education() {
   return (
-    <section id="education" className="py-28 bg-[#0a0a0a] relative overflow-hidden">
+    <section id="education" className="py-28 bg-[var(--bg-color)] relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(0,245,255,0.15)] to-transparent" />
 
       <div className="max-w-4xl mx-auto px-6">
@@ -20,7 +20,7 @@ export default function Education() {
           <p className="font-mono text-[#00F5FF] text-sm tracking-widest uppercase mb-3">
             // Academic Background
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-white">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
             Education <span className="gradient-text">& Learning</span>
           </h2>
         </motion.div>
@@ -33,7 +33,7 @@ export default function Education() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="max-w-3xl mx-auto"
         >
-          <div className="relative bg-[#121212] border border-[#1e1e1e] rounded-2xl p-8 hover:border-[rgba(0,245,255,0.15)] transition-all duration-300">
+          <div className="relative glass-card bg-white/5 dark:bg-[#121212] border border-gray-200 dark:border-[#1e1e1e] rounded-2xl p-8 hover:border-[rgba(0,245,255,0.15)] dark:hover:border-[rgba(0,245,255,0.15)] transition-all duration-300 shadow-md">
             {/* Degree Header */}
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
               <div className="flex items-start gap-4">
@@ -41,11 +41,11 @@ export default function Education() {
                   <GraduationCap size={22} className="text-[#00F5FF]" />
                 </div>
                 <div>
-                  <h3 className="font-heading text-xl font-bold text-white mb-1">
-                    B.Tech – AI & Data Science
+                  <h3 className="font-heading text-xl font-bold text-slate-900 dark:text-white mb-1">
+                    B.Tech Artificial Intelligence and Data Science
                   </h3>
-                  <p className="text-[#00F5FF] font-mono text-sm">
-                    M. Kumarasamy College of Engineering
+                  <p className="text-cyan-600 dark:text-[#00F5FF] font-mono text-sm">
+                    J.J. College of Engineering and Technology, Anna University
                   </p>
                 </div>
               </div>
@@ -61,7 +61,7 @@ export default function Education() {
 
             {/* CGPA */}
             <div className="inline-block px-4 py-2 rounded-lg bg-[rgba(0,245,255,0.06)] border border-[rgba(0,245,255,0.15)] mb-6">
-              <span className="text-sm font-mono text-gray-400">CGPA: </span>
+              <span className="text-sm font-mono text-gray-500 dark:text-gray-400">CGPA: </span>
               <span className="text-lg font-heading font-bold text-[#00F5FF]">8.0</span>
               <span className="text-sm text-gray-500"> / 10</span>
             </div>
@@ -69,7 +69,7 @@ export default function Education() {
             {/* Relevant Areas */}
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <BookOpen size={14} className="text-gray-500" />
+                <BookOpen size={14} className="text-gray-400 dark:text-gray-500" />
                 <p className="text-xs font-mono text-gray-500 uppercase tracking-wider">
                   Relevant Areas of Study
                 </p>
@@ -84,7 +84,7 @@ export default function Education() {
                   "NLP",
                   "AI Systems",
                 ].map((area) => (
-                  <span key={area} className="skill-badge hover:scale-105 transition-all duration-300">{area}</span>
+                  <span key={area} className="skill-badge bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-gray-700 dark:text-gray-300 px-3 py-1 text-xs rounded-md font-mono hover:scale-105 transition-all duration-300">{area}</span>
                 ))}
               </div>
             </div>

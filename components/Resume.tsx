@@ -9,7 +9,7 @@ export default function Resume() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section id="resume" className="py-24 bg-[#050505] relative overflow-hidden">
+    <section id="resume" className="py-24 bg-[var(--bg-color)] relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(0,245,255,0.2)] to-transparent" />
       <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
 
@@ -53,9 +53,7 @@ export default function Resume() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.button
               onClick={() => setIsModalOpen(true)}
-              className="flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#00F5FF] to-[#7A5FFF] text-black font-heading font-bold text-sm btn-glow transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-black font-semibold rounded-xl shadow-sm hover:scale-[1.03] transition-all duration-200 text-sm w-full sm:w-auto"
             >
               <Eye size={16} /> Preview Resume
             </motion.button>
@@ -63,9 +61,7 @@ export default function Resume() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-7 py-3.5 rounded-xl border border-[rgba(0,245,255,0.3)] text-[#00F5FF] font-heading font-semibold text-sm hover:bg-[rgba(0,245,255,0.06)] transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="flex items-center justify-center gap-2 px-7 py-3.5 bg-[#0a0a0a] border border-slate-700 text-white hover:border-cyan-400 hover:bg-slate-900 rounded-xl transition-all duration-200 text-sm font-semibold w-full sm:w-auto"
             >
               <FileText size={16} /> View Full PDF
             </motion.a>

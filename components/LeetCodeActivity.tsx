@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Code2, Trophy, Target, Award, Flame } from "lucide-react";
 
-const LEETCODE_USERNAME = "elango-project";
+const LEETCODE_USERNAME = "elango__y";
 
 // Static stats – update these with your real numbers
 const leetcodeStats = {

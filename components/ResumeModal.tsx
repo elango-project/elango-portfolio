@@ -42,7 +42,7 @@ export default function ResumeModal({ isOpen, onClose, pdfUrl }: ResumeModalProp
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-5xl h-full max-h-[90vh] flex flex-col bg-[#0a0a0a] border border-[#00F5FF]/30 rounded-2xl shadow-[0_0_50px_rgba(0,245,255,0.15)] overflow-hidden"
+            className="relative w-full max-w-5xl h-full max-h-[90vh] flex flex-col bg-[var(--bg-color)] border border-[#00F5FF]/30 rounded-2xl shadow-[0_0_50px_rgba(0,245,255,0.15)] overflow-hidden"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-800 bg-[#121212]">
