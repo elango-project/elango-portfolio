@@ -168,8 +168,8 @@ export default function Hero() {
               className="flex flex-wrap items-center gap-6"
             >
               {[
-                { value: "150+", label: "LeetCode" },
-                { value: "100+", label: "Day Streak" },
+                { value: "290+", label: "LeetCode" },
+                { value: "250+", label: "Day Streak" },
                 { value: "5+", label: "Projects" },
                 { value: "2x", label: "Winner" },
               ].map((stat) => (
