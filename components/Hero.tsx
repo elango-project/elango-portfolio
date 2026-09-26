@@ -188,7 +188,7 @@ export default function Hero() {
             <div className="group relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-2xl p-1 bg-gradient-to-br from-[#00F5FF] to-[#7A5FFF] shadow-[0_0_30px_rgba(0,245,255,0.15)] transition-all duration-300 ease-out hover:scale-[1.05] hover:-rotate-1 hover:shadow-[0_0_50px_rgba(0,245,255,0.3)] cursor-pointer">
               <div className="w-full h-full rounded-xl overflow-hidden bg-[var(--bg-color)] relative">
                 <Image
-                  src="/Admin-2.jpg"
+                  src="/profile.jpg"
                   alt="Elango Yuvaraj"
                   fill
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
